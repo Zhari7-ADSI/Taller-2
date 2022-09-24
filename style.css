@@ -1,0 +1,23 @@
+* {
+    font-family: monospace;
+    font-weight: 100;
+    font-size: 20px;
+}
+
+.caja-h1 {
+    background-color:#FA8072;
+    border-style: double;
+    margin: 50px;   
+    position:static;
+    height: 200px;
+    text-align: center;
+    box-shadow: 10px 20px 50px #000;
+}
+
+.btn:hover {
+    color: #fff;
+    background-color: #000;
+    transition: 0.5s;
+}
+
+
