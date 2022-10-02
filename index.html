@@ -6,31 +6,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Ejercicio 3</title>
+    <script src="main.js"></script>
+    <title>Ejercicio 4</title>
 
 </head>
 
 <body>
+    <div class="caja">
+        <h1>4. Cálculo de áreas <br> ¿Qué figura quiere calcular?</h1>
 
-    <div class="caja-h1">
-        <h1>3. Desarrollar un diagrama que lea 3 valores diferentes e indique cual es el mayor de ellos, el menor o si
-            son iguales.</h1>
+        <select name="select" id="dato" class="dato">
+            <option value="value1" disabled selected>Elija una opción</option>
+            <option value="Triangulo">Triangulo</option>
+            <option value="Circulo">Circulo</option>
+        </select>
 
-        <div class="formulario">
-            <form id="form">
-                <input class="input" type="number" placeholder="  Ingresa el valor 1" id="numero1">
-                <input class="input" type="number" placeholder="  Ingresa el valor 2" id="numero2">
-                <input class="input" type="number" placeholder="  Ingresa el valor 3" id="numero3">
-                <h2 id="resul"></h2>
-                <h2 id="resul2"></h2>
-                <input class="btn" type="submit" id="boton" value="enviar">
-            </form>
-        </div>
+        <form id="formTriangulo" class="Triangulo">
+            <h1>Digite la base del triángulo</h1>
+            <input type="number" id="Base" class="input" required>
+            <h1>Digite la altura del triángulo</h1>
+            <input type="number" id="Altura" class="input" required>
+        </form>
 
+        <form id="formCirculo" class="Circulo">
+            <h1>Digite el radio del círculo</h1>
+            <input type="number" id="Radio" class="input" required>
+        </form>
+
+        <form id="area" class="area">
+            <h1>El resultado es:</h1>
+            <h1 id="resultado" class="resultado"></h1>
+            <input value="Ejecutar" type="submit" class="ejecutar">
+        </form>
     </div>
-
-
-    <script src="main.js"></script>
 
 </body>
 

@@ -1,53 +1,39 @@
+function comprobar(seleccionado){
+            if (seleccionado == "Triangulo") {
+                document.querySelector("#formTriangulo").style.display = 'block';
+            } 
+            else {
+                document.querySelector("#formCirculo").style.display = 'block';
+            }
+        }
+        
+let seleccionado;
 addEventListener("DOMContentLoaded", (e) => {
-    let form = document.getElementById("form");
-    form.addEventListener("submit", (e) => {
+    let dato = document.querySelector("#dato");
+    dato.addEventListener("change", (e) => {
+        document.querySelector("#formTriangulo").style.display = 'none';
+        document.querySelector("#formCirculo").style.display = 'none';
+        seleccionado = dato.value;
+        comprobar(seleccionado);
+    })
+})
+addEventListener("DOMContentLoaded", (e) => {
+    let area = document.querySelector("#area");
+    area.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        let num1 = document.getElementById("numero1").value;
-        let num2 = document.getElementById("numero2").value;
-        let num3 = document.getElementById("numero3").value;
+                if (seleccionado=="Triangulo"){
+            let base = document.querySelector("#Base").value;
+            let altura = document.querySelector("#Altura").value;
+            let area = (base*altura)/2;
+            document.querySelector("#resultado").innerHTML = area;
 
-        if (num1 > num2 && num1 > num3) {
-            document.getElementById("resul").innerHTML = "El número mayor es: " + num1;
-            if (num2 < num3) {
-                document.getElementById("resul2").innerHTML = "El número menor es: " + num2;
-            }
-            else if (num3 < num2) {
-                document.getElementById("resul2").innerHTML = "El número menor es: " + num3;
-            }
-            else {
-                document.getElementById("resul2").innerHTML = "El número igual es: " + num2;
-            }
-        }
-
-        else if (num2 > num1 && num2 > num3) {
-            document.getElementById("resul").innerHTML = "El número mayor es: " + num2;
-            if (num1 < num3) {
-                document.getElementById("resul2").innerHTML = "El número menor es: " + num1;
-            }
-            else if (num3 < num1) {
-                document.getElementById("resul2").innerHTML = "El número menor es: " + num3;
-            }
-            else {
-                document.getElementById("resul2").innerHTML = "El número igual es: " + num1;
-            }
-        }
-
-        else if (num3 > num1 && num3 > num2) {
-            document.getElementById("resul").innerHTML = "El número mayor es: " + num3;
-            if (num1 < num2) {
-                document.getElementById("resul2").innerHTML = "El número menor es: " + num1;
-            }
-            else if (num2 < num1) {
-                document.getElementById("resul2").innerHTML = "El número menor es: " + num2;
-            }
-            else {
-                document.getElementById("resul2").innerHTML = "El número igual es: " + num2;
-            }
-        }
-
-        else {
-            document.getElementById("resul2").innerHTML = "El número igual es: " + num1;
+        } else if (seleccionado== "Circulo"){
+            let radio = document.querySelector("#Radio").value;
+            let area = Math.PI * radio * radio;
+            document.querySelector("#resultado").innerHTML = area;
+        } else{
+            alert("*Primero debes elegir una figura*")
         }
 
     })
