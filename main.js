@@ -6,15 +6,16 @@ addEventListener("DOMContentLoaded", (e) => {
 
         function validar(){
 
-            let lado1 = document.getElementById("numero1").value;
-            let lado2 = document.getElementById("numero2").value;
+            let presion = document.getElementById("numero1").value;
+            let temperatura = document.getElementById("numero2").value;
 
-            if((lado1 > 0) && (lado2 > 0)){
-                let area = lado1 * lado2;
-                document.getElementById('resultado').innerHTML = 'El área del rectángulo es: ' + area;
+            if((temperatura > 100) || (presion > 200)){
+                document.getElementById('resultado').style.color = "red";
+                document.getElementById('resultado').innerHTML = '¡¡¡ ALARMA🅰️ !!!';
             }
             else{
-                document.getElementById('resultado').innerHTML = 'Los lados deben ser positivos.';
+                document.getElementById("resultado").style.color = "blue";
+                document.getElementById('resultado').innerHTML = 'NORMAL✅';
             }
         }
     })
