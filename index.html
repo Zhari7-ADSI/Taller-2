@@ -7,36 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="main.js"></script>
-    <title>Ejercicio 4</title>
+    <title>Ejercicio 5</title>
 
 </head>
 
 <body>
+
     <div class="caja">
-        <h1>4. Cálculo de áreas <br> ¿Qué figura quiere calcular?</h1>
+        <h1>5. Escriba un algoritmo que calcule el área de un rectángulo siempre y cuando los lados sean positivos.</h1>
 
-        <select name="select" id="dato" class="dato">
-            <option value="value1" disabled selected>Elija una opción</option>
-            <option value="Triangulo">Triangulo</option>
-            <option value="Circulo">Circulo</option>
-        </select>
-
-        <form id="formTriangulo" class="Triangulo">
-            <h1>Digite la base del triángulo</h1>
-            <input type="number" id="Base" class="input" required>
-            <h1>Digite la altura del triángulo</h1>
-            <input type="number" id="Altura" class="input" required>
-        </form>
-
-        <form id="formCirculo" class="Circulo">
-            <h1>Digite el radio del círculo</h1>
-            <input type="number" id="Radio" class="input" required>
-        </form>
-
-        <form id="area" class="area">
-            <h1>El resultado es:</h1>
-            <h1 id="resultado" class="resultado"></h1>
-            <input value="Ejecutar" type="submit" class="ejecutar">
+        <form id="form" class="form">
+            <input name="numero" id="numero1" type="text" placeholder="Lado 1" class="input">
+            <input name="numero" id="numero2" type="text" placeholder="Lado 2" class="input">
+            <h2 id="resultado"></h2>
+            <button type="submit" id="calcular">Calcular</button>
         </form>
     </div>
 

@@ -1,40 +1,21 @@
-function comprobar(seleccionado){
-            if (seleccionado == "Triangulo") {
-                document.querySelector("#formTriangulo").style.display = 'block';
-            } 
-            else {
-                document.querySelector("#formCirculo").style.display = 'block';
+addEventListener("DOMContentLoaded", (e) => {
+    let formulario = document.querySelector("#form");
+    formulario.addEventListener("submit", (e) => {
+        e.preventDefault();
+        validar();
+
+        function validar(){
+
+            let lado1 = document.getElementById("numero1").value;
+            let lado2 = document.getElementById("numero2").value;
+
+            if((lado1 > 0) && (lado2 > 0)){
+                let area = lado1 * lado2;
+                document.getElementById('resultado').innerHTML = 'El área del rectángulo es: ' + area;
+            }
+            else{
+                document.getElementById('resultado').innerHTML = 'Los lados deben ser positivos.';
             }
         }
-        
-let seleccionado;
-addEventListener("DOMContentLoaded", (e) => {
-    let dato = document.querySelector("#dato");
-    dato.addEventListener("change", (e) => {
-        document.querySelector("#formTriangulo").style.display = 'none';
-        document.querySelector("#formCirculo").style.display = 'none';
-        seleccionado = dato.value;
-        comprobar(seleccionado);
-    })
-})
-addEventListener("DOMContentLoaded", (e) => {
-    let area = document.querySelector("#area");
-    area.addEventListener("submit", (e) => {
-        e.preventDefault();
-
-                if (seleccionado=="Triangulo"){
-            let base = document.querySelector("#Base").value;
-            let altura = document.querySelector("#Altura").value;
-            let area = (base*altura)/2;
-            document.querySelector("#resultado").innerHTML = area;
-
-        } else if (seleccionado== "Circulo"){
-            let radio = document.querySelector("#Radio").value;
-            let area = Math.PI * radio * radio;
-            document.querySelector("#resultado").innerHTML = area;
-        } else{
-            alert("*Primero debes elegir una figura*")
-        }
-
     })
 })

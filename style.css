@@ -17,29 +17,18 @@ h1 {
     border-style: double;
     border-radius: 30px;
     margin: auto;
-    padding: 0px 0px 290px 0px;
+    padding: 0px 0px 60px 0px;
     height: 150px;
     text-align: center;
     box-shadow: 10px 20px 50px #000;
 }
 
-.dato {
-    border-radius: inherit;
-    height: 40px;
-    padding: 0px 10px;
-}
-
-#Altura, #Base, #Radio {
+.input {
     width: 37vh;
     border-radius: 7px;
 }
 
-.Triangulo,
-.Circulo {
-    display: none;
-}
-
-.ejecutar:hover , .dato:hover , .input:hover{
+#calcular:hover, .input:hover {
     color: #fff;
     background-color: #000;
     transition: 0.5s;
