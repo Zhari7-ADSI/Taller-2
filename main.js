@@ -6,19 +6,19 @@ addEventListener("DOMContentLoaded", (e) => {
 
         function validar() {
 
-            let consu = document.getElementById("numero1").value;
+            let rango = document.getElementById("numero1").value;
+            let horas = document.getElementById("numero2").value;
 
-            if (consu > 130000) {
-
-                let desc = consu * 0.15;
-                let tot = consu - desc;
-
-                document.getElementById('resultado').innerHTML = 'Descuento del 15%';
-                document.getElementById('resultado2').innerHTML = 'Paga ' + tot + ' pesos';
+            if (rango == "P" || rango == "p") {   
+                let forma = horas * 20000;
+                document.getElementById('resultado').innerHTML = 'Su pago es de '+ forma + ' pesos.';
+            }
+            else if (rango == "a" || rango == "A") {
+                let forma = horas * 10000;
+                document.getElementById("resultado").innerHTML = 'Su pago es de '+ forma + ' pesos.';
             }
             else {
-                document.getElementById("resultado").style.color = 'Sin descuento';
-                document.getElementById('resultado2').innerHTML = 'Paga ' + consu + ' pesos';
+                document.getElementById("resultado").innerHTML = 'La letra que ingresó es incorrecta.';
             }
         }
     })
