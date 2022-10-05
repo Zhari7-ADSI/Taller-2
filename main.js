@@ -4,18 +4,21 @@ addEventListener("DOMContentLoaded", (e) => {
         e.preventDefault();
         validar();
 
-        function validar(){
+        function validar() {
 
-            let presion = document.getElementById("numero1").value;
-            let temperatura = document.getElementById("numero2").value;
+            let consu = document.getElementById("numero1").value;
 
-            if((temperatura > 100) || (presion > 200)){
-                document.getElementById('resultado').style.color = "red";
-                document.getElementById('resultado').innerHTML = '¡¡¡ ALARMA🅰️ !!!';
+            if (consu > 130000) {
+
+                let desc = consu * 0.15;
+                let tot = consu - desc;
+
+                document.getElementById('resultado').innerHTML = 'Descuento del 15%';
+                document.getElementById('resultado2').innerHTML = 'Paga ' + tot + ' pesos';
             }
-            else{
-                document.getElementById("resultado").style.color = "blue";
-                document.getElementById('resultado').innerHTML = 'NORMAL✅';
+            else {
+                document.getElementById("resultado").style.color = 'Sin descuento';
+                document.getElementById('resultado2').innerHTML = 'Paga ' + consu + ' pesos';
             }
         }
     })
