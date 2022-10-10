@@ -6,20 +6,27 @@ addEventListener("DOMContentLoaded", (e) => {
 
         function validar() {
 
-            let rango = document.getElementById("numero1").value;
-            let horas = document.getElementById("numero2").value;
+            let sum = 0;
+            let mult = 0;
 
-            if (rango == "P" || rango == "p") {   
-                let forma = horas * 20000;
-                document.getElementById('resultado').innerHTML = 'Su pago es de '+ forma + ' pesos.';
+            let a = Number(document.getElementById("numero1").value);
+            let b = Number(document.getElementById("numero2").value);
+            let c = Number(document.getElementById("numero3").value);
+            let d = Number(document.getElementById("numero4").value);
+
+            let a1 = a%2;
+            let b1 = b%2;
+            let c1 = c%2;
+            let d1 = d%2;
+
+            if ((a1 == 0) && (b1 == 0) && (c1 == 0) && (d1 == 0)) {   
+                sum = a + b + c + d;
             }
-            else if (rango == "a" || rango == "A") {
-                let forma = horas * 10000;
-                document.getElementById("resultado").innerHTML = 'Su pago es de '+ forma + ' pesos.';
+            else if ((a1 != 0) && (b1 != 0) && (c1 != 0) && (d1 != 0)) {
+                 mult = a * b * c * d;
             }
-            else {
-                document.getElementById("resultado").innerHTML = 'La letra que ingresó es incorrecta.';
-            }
+            document.getElementById("resultado").innerHTML = 'La suma es: '+ sum;
+            document.getElementById("resultado2").innerHTML = 'La multiplicacion es: '+ mult;
         }
     })
 })
