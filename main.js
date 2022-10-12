@@ -5,16 +5,29 @@ addEventListener("DOMContentLoaded", (e) => {
         validar();
 
         function validar() {
-            
-            let num1 = Number(document.getElementById("numero1").value);
-            let num2 = Number(document.getElementById("numero2").value);
 
-            if (num1 > num2) {
-                let rest = num1 - num2;
-                document.getElementById("resultado").innerHTML = "La resta es:" + rest;
+            let letra = document.getElementById("numero1").value;
+
+            if ( letra == "A" || letra == "a") {
+                let prec = prompt("Ingrese el precio");
+                let desc = prec * 0.10;
+                let tot = prec - desc;
+                document.getElementById("resultado").innerHTML = "Total a pagar: " + tot + " pesos";
+            }
+            else if (letra == "B" || letra == "b") {
+                let prec = prompt("Ingrese el precio");
+                let desc = prec * 0.15;
+                let tot = prec - desc;
+                document.getElementById("resultado").innerHTML = "Total a pagar: " + tot + " pesos";
+            }
+            else if (letra == "C" || letra == "c") {
+                let prec = prompt("Ingrese el precio");
+                let desc = prec * 0.20;
+                let tot = prec - desc;
+                document.getElementById("resultado").innerHTML = "Total a pagar: " + tot + " pesos";
             }
             else {
-                document.getElementById("resultado").innerHTML = "No ha sido posible realizar la operación, el primer número debe ser mayor que el segundo.";
+                document.getElementById("resultado").innerHTML = "La letra es incorrecta";
             }
         }
     })
