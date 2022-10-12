@@ -23,9 +23,11 @@ h1 {
 }
 
 .input {
+    width: 24%;
     display: block;
     margin: 3px auto;
     border: thin;   
+    border-radius: 20px;
 }
 
 #iniciar:hover, .input:hover{
